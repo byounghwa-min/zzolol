@@ -2,10 +2,10 @@
 import { ref, onMounted } from "vue";
 import { addComment, getComments } from "@/firebase";
 
-const newComment = ref("");
-const comments = ref([]);
+const newComment = ref(""); // 사용자가 입력하는 댓글
+const comments = ref([]);   // Firestore에서 불러온 댓글 리스트
 
-// 댓글 가져오기 (실시간 업데이트)
+// Firestore에서 댓글 불러오기
 onMounted(() => {
   getComments((data) => {
     comments.value = data;
@@ -34,6 +34,27 @@ const submitComment = async () => {
     </ul>
   </div>
 </template>
+
+<style scoped>
+.comments {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+input {
+  width: 80%;
+  padding: 5px;
+  margin-right: 10px;
+}
+button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+</style>
+
 
 <style scoped>
 .comments {
