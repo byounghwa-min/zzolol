@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, query, onSnapshot } from "firebase/firestore";
+import { getFirestore, collection, addDoc, query, onSnapshot, serverTimestamp } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "YOUR_API_KEY",
@@ -14,9 +14,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Firestore에 댓글 추가하는 함수
+// Firestore에 댓글 추가하는 함수 (🚀 수정된 부분)
 const addComment = async (text) => {
-  await addDoc(collection(db, "comments"), { text, createdAt: new Date() });
+  await addDoc(collection(db, "comments"), {
+    text,
+    createdAt: serverTimestamp() // ✅ Firestore가 자동으로 타임스탬프 추가
+  });
 };
 
 // Firestore에서 댓글 실시간 가져오기
