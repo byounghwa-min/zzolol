@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import CommentSection from "@/components/CommentSection.vue";
+</script>
 
 <template>
   <header>
@@ -13,6 +15,10 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/about">About</RouterLink>
       </nav>
     </div>
+      <header>
+    <h1>내 웹사이트</h1>
+  </header>
+  <CommentSection />
   </header>
 
   <RouterView />
@@ -81,12 +87,3 @@ nav a:first-of-type {
   }
 }
 </style>
-import CommentSection from "@/components/CommentSection.vue";
-</script>
-
-<template>
-  <header>
-    <h1>내 웹사이트</h1>
-  </header>
-  <CommentSection />
-</template>
