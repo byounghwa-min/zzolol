@@ -29,6 +29,7 @@ const submitComment = async () => {
 
     <ul>
       <li v-for="comment in comments" :key="comment.id">
+        <strong>{{ comment.createdAt ? comment.createdAt.toDate().toLocaleString() : "시간 없음" }}</strong>: 
         {{ comment.text }}
       </li>
     </ul>
