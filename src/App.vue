@@ -82,3 +82,13 @@ nav a:first-of-type {
   }
 }
 </style>
+<script setup>
+import CommentSection from "@/components/CommentSection.vue";
+</script>
+
+<template>
+  <header>
+    <h1>내 웹사이트</h1>
+  </header>
+  <CommentSection />
+</template>
