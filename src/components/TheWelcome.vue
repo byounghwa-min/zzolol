@@ -14,11 +14,9 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
     <template #icon>
       <DocumentationIcon />
     </template>
-    <template #heading>책책</template>
+    <template #heading>메자이</template>
 
-    Vue’s
-    <a href="https://vuejs.org/" target="_blank" rel="noopener">official documentation</a>
-    provides you with all information you need to get started.
+    메자이를 꼭 가야만 할까?
   </WelcomeItem>
 
   <WelcomeItem>
