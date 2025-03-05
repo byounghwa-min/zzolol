@@ -5,6 +5,7 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <header>
+    <img alt="New logo" class="logo" src="@/assets/sona.png" width="200" height="200" />
     <div class="wrapper">
       <HelloWorld msg="ㅉㄺ" />
 
